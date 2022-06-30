@@ -115,6 +115,17 @@ if __name__ == '__main__':
         elif 'open code' in query:
             speak("Opening VS Code...")
             codepath = 'link_to_VScode_application_in_computer'
+        
+        elif 'email to anyone' in query:
+            try:
+                speak("What should I say?")
+                content = takeCommand()
+                to = "anyone_email@gmail.com"    
+                sendEmail(to, content)
+                speak("Email has been sent!")
+            except Exception as e:
+                print(e)
+                speak("Some error occured ! Sorry")
 
         elif 'sleep' in query:
             speak("Thankyou...")
