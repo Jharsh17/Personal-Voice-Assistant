@@ -92,6 +92,10 @@ if __name__ == '__main__':
         elif 'open youtube' in query:
             speak("Opening Youtube...")
             webopen("youtube.com")
+        
+        elif 'open college mail' in query:
+            speak("Opening Zimbra Mail...")
+            webopen("stud.iitp.ac.in")
 
         elif 'open google' in query:
             speak("Opening Google...")
@@ -99,7 +103,7 @@ if __name__ == '__main__':
 
         elif 'play music' in query:
             speak("Playing Music...")
-            music_dir = 'link_to_songs_folder_in_computer'
+            music_dir = 'C:\\Users\\Harsh\\Desktop\\FavMusic'
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -107,6 +111,16 @@ if __name__ == '__main__':
         elif 'open spotify' in query:
             speak("Opening Spotify...")
             webopen("open.spotify.com")
+
+        elif 'play locha' in query:
+            speak("Playing...")
+            webopen("https://open.spotify.com/track/3V3QbgrOZKtFv5MXzAAdZr?si=fa79f44bc22240ae")
+            playmusic()
+        
+        elif 'play mala' in query:
+            speak("Playing...")
+            webopen("https://open.spotify.com/track/5kOuoPsmNJ58PQdeMIKnRJ?si=98410c2ccd4e4811")
+            playmusic()
             
         elif 'time' in query:
             strTime = datetime.datetime.now().satrftime("%H:%M")
@@ -114,23 +128,20 @@ if __name__ == '__main__':
 
         elif 'open code' in query:
             speak("Opening VS Code...")
-            codepath = 'link_to_VScode_application_in_computer'
+            codepath = 'C:\\Users\\Harsh\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
         
-        elif 'email to anyone' in query:
+        elif 'email to harsh' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "anyone_email@gmail.com"    
+                to = "harsh.cheer@gmail.com"
                 sendEmail(to, content)
-                speak("Email has been sent!")
+                speak("Email has been sent successfully!")
+            
             except Exception as e:
                 print(e)
-                speak("Some error occured ! Sorry")
+                speak("Sorry... Unable to send email!")
 
-        elif 'sleep' in query:
-            speak("Thankyou...")
-            keyboard = Controller()
-            keyboard.press('cmd_l')
-            keyboard.press('L')
-            keyboard.release('cmd_l')
-            keyboard.release('L')
+        elif 'close' in query:
+            speak("Take Care...")
+            exit()
