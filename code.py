@@ -92,10 +92,6 @@ if __name__ == '__main__':
         elif 'open youtube' in query:
             speak("Opening Youtube...")
             webopen("youtube.com")
-        
-        elif 'open college mail' in query:
-            speak("Opening Zimbra Mail...")
-            webopen("stud.iitp.ac.in")
 
         elif 'open google' in query:
             speak("Opening Google...")
@@ -103,7 +99,7 @@ if __name__ == '__main__':
 
         elif 'play music' in query:
             speak("Playing Music...")
-            music_dir = 'C:\\Users\\Harsh\\Desktop\\FavMusic'
+            music_dir = 'path'
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -111,16 +107,6 @@ if __name__ == '__main__':
         elif 'open spotify' in query:
             speak("Opening Spotify...")
             webopen("open.spotify.com")
-
-        elif 'play locha' in query:
-            speak("Playing...")
-            webopen("https://open.spotify.com/track/3V3QbgrOZKtFv5MXzAAdZr?si=fa79f44bc22240ae")
-            playmusic()
-        
-        elif 'play mala' in query:
-            speak("Playing...")
-            webopen("https://open.spotify.com/track/5kOuoPsmNJ58PQdeMIKnRJ?si=98410c2ccd4e4811")
-            playmusic()
             
         elif 'time' in query:
             strTime = datetime.datetime.now().satrftime("%H:%M")
@@ -128,13 +114,13 @@ if __name__ == '__main__':
 
         elif 'open code' in query:
             speak("Opening VS Code...")
-            codepath = 'C:\\Users\\Harsh\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+            codepath = 'path'
         
-        elif 'email to harsh' in query:
+        elif 'email to me' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "harsh.cheer@gmail.com"
+                to = "example@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent successfully!")
             
